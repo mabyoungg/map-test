@@ -8,15 +8,22 @@
     <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=3iqw5q7j0y"></script>
 </head>
 <body>
-<div id="map" style="width:100%;height:400px;"></div>
+<body>
+    <button onclick="changeMapTypeToHybrid()">HYBRID 변경</button>
+    <div id="map" style="width:100%; height:400px;"></div>
+</body>
 
 <script>
     var mapOptions = {
         center: new naver.maps.LatLng(37.3595704, 127.105399),
-        zoom: 10
+        zoom: 10,
     };
 
     var map = new naver.maps.Map('map', mapOptions);
+
+    function changeMapTypeToHybrid() {
+        map.setMapTypeId(naver.maps.MapTypeId.HYBRID);
+    }
 </script>
 </body>
 </html>
