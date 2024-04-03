@@ -14,4 +14,9 @@ public class MapController {
     public String getKakaoMap() {
         return "kakaoMap";
     }
+
+    @GetMapping("/kakao-map-keyword")
+    public String getKakaoMapKeyword() {
+        return "kakaoMap-keyword";
+    }
 }
