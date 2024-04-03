@@ -10,6 +10,9 @@
 <body>
 <body>
     <button onclick="changeMapTypeToHybrid()">HYBRID 변경</button>
+    <button onclick="move1()">지도 이동 1(제주도)</button>
+    <button onclick="move2()">지도 이동 2(서울 표시, 축적 적게)</button>
+    <button onclick="move3()">지도 이동 3(현재위치 기준에서 대각선(오른쪽 아래) 이동</button>
     <div id="map" style="width:100%; height:400px;"></div>
 </body>
 
@@ -23,6 +26,25 @@
 
     function changeMapTypeToHybrid() {
         map.setMapTypeId(naver.maps.MapTypeId.HYBRID);
+    }
+
+    function move1() {
+        var jeju = new naver.maps.LatLng(33.3590628, 126.534361);
+
+        map.setCenter(jeju); // 중심 좌표 이동
+        map.setZoom(13);     // 줌 레벨 변경
+    }
+
+    function move2() {
+        var seoul = new naver.maps.LatLngBounds(
+            new naver.maps.LatLng(37.42829747263545, 126.76620435615891),
+            new naver.maps.LatLng(37.7010174173061, 127.18379493229875));
+
+        map.fitBounds(seoul); // 좌표 경계 이동
+    }
+
+    function move3() {
+        map.panBy(new naver.maps.Point(10, 10)); // 오른쪽 아래로 10 픽셀 이동
     }
 </script>
 </body>
