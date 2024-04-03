@@ -9,4 +9,9 @@ public class MapController {
     public String getNaverMap() {
         return "naverMap";
     }
+
+    @GetMapping("/kakao-map")
+    public String getKakaoMap() {
+        return "kakaoMap";
+    }
 }
